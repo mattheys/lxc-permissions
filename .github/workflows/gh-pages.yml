@@ -29,7 +29,7 @@ jobs:
       - name: Publish with dotnet
         run: dotnet publish --configuration Release --property:PublishDir=./output
       - name: Copy files to artifact folder
-        run: mkdir ./_site && cp -R ./output/wwwroot/* ./_site
+        run: mkdir ./_site && cp -r ./output/wwwroot/* ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
   deploy:
